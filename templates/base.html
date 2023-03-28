@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+     <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+<header class="navbar">
+        <div class="navbar__brand">
+            <img
+                    class="navbar__logo"
+                    src="/static/logo.svg"
+                    alt="The Microblog logo"
+            />PythonBlog
+        </div>
+        <ul class="navbar__navigation">
+            <li class="navbar__navigation-item">
+                <a href="#" class="navbar__link">Recent</a>
+            </li>
+            {% if 'user' in session %}
+                <li class="navbar__navigation-item"><a href="/signout">Logout</a></li>
+            {% else %}
+                <li class="navbar__navigation-item"><a href="/signup">Signup</a></li>
+                <li class="navbar__navigation-item"><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </header>
+
+{% block content %}
+{# #}
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/js/scripts.js"></script>
+</body>
+
+</html>

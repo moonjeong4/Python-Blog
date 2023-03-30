@@ -12,11 +12,13 @@ class User:
 
     def start_session(self, user):
 
+        session_user = {
+            'name': user['name'],
+            'email': user['email']
+        }
         session['logged_in'] = True
-        session['user'] = user
-        # convert to json
-        # session['user'] = json.dumps(user, default=str)
-        return jsonify(user), 200
+        session['user'] = session_user
+        return jsonify(session_user), 200
 
     def signup(self):
 

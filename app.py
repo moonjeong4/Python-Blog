@@ -7,7 +7,6 @@ app = Flask(__name__)
 # Description: add secret key encrypt session data
 app.secret_key = b'F\x1c!Bg\xee\xfa\xe30\x00\xfa3\x97\x9c<a'
 
-
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
